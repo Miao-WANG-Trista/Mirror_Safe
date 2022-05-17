@@ -91,6 +91,9 @@ a light beam enters this trap and it won't get out of this box. However, if ther
 
 ## How to run the code
 Each test case should be stored in a txt file and each txt file only represents one test case.
+
 step 1. Put the txt file into the same directory with main.py and helpful_functions.py.
+
 step 2. In the terminal, cd to the current directory
+
 step 3. run 'python main.py test.txt'
