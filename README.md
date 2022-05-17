@@ -40,11 +40,12 @@ Solutions:
 
 1. In this problem, we have in total three classes:
 > Laser()
-| Attributes       | Notes                                 |
-|------------------|---------------------------------------|
-| orientation      | will be changed in set_orientation()  |
-| position(row,col)| will be changed in move()             |
-| visited_cells    | the simulation of beam path           |
+
+| Attributes        | Notes                                |
+|-------------------|--------------------------------------|
+| orientation       | will be changed in set_orientation() |
+| position(row,col) | will be changed in move()            |
+| visited_cells     | the simulation of a beam path        |
 
 | Methods(not inclusive) | Notes                                                                                           |
 |------------------------|-------------------------------------------------------------------------------------------------|
@@ -52,18 +53,20 @@ Solutions:
 | set_orientation()      | will be changed in move()                                                                       |
 
 > Cell()
-| Attributes/Methods | Notes                                                                                         |
-|--------------------|-----------------------------------------------------------------------------------------------|
-| mirror_type        | the mirror type of that cell,'None',default value, means there is no mirror, 'left' or 'right'|
-| reflect()          | based on input orientation and mirror type, return new orientation                            |
+| Attributes/ Methods | Notes                                                                                          |
+|---------------------|------------------------------------------------------------------------------------------------|
+| mirror_type         | the mirror type of that cell,'None',default value, means there is no mirror, 'left' or 'right' |
+| reflect()           | based on input orientation and mirror type, return new orientation                             |
 
 > Grid()
 Grid is made of r * c cells and in _init_(), we will create a list of cells, where each element will be an instance of class Cell()
+
 | Methods          | Notes                                                                                                      |
 |------------------|------------------------------------------------------------------------------------------------------------|
 | compute_path()   | with initialization of orientation and position, a simulated beam path can be generated inside such a grid |
 | is_beam_inside() | a condition to be met for while loop inside compute_path()                                                 |
 | find_solutions() | print output of required format                                                                            |
+
 2. We will simulate laser's movement step by step. Once meeting a mirror, its orientation will be changed. To realize, we can create two dictionaries: LEFT_MIRROR and RIGHT_MIRROR.
 3. For two kind of cases:
 the condition for returning 0: the point at the right to the bottom right cell can be visited
@@ -73,7 +76,8 @@ the condition for returning 'impossible': there is no element in the differnce b
 
 ### Any possibility of an infinite loop?
 With below illustration, we can prove there cannot be a trap.
-<img width="635" alt="image" src="https://user-images.githubusercontent.com/77568908/168867396-e20c36b0-59c6-404d-bc65-023b1ad66ea6.png">
+<img width="1047" alt="image" src="https://user-images.githubusercontent.com/77568908/168870462-89958adf-a835-4131-9d99-b2aa06484d4d.png">
+a light beam enters this trap and it won't get out of this box. However, if there was a trap, the light beam will eventually come back to this mirror, but it cannot hit it with 'right' direction since this direction implies the beam comes from outside. Meanwhile, for all other 3 directions, the beam will escape the trap.
 
 **representation**
 1. To be more memory efficient and flexible, we will map orientations to a tuple of 2 ints
@@ -82,6 +86,8 @@ With below illustration, we can prove there cannot be a trap.
     (1, 0): "down",
     (0, -1): "left"
 2. mirror_type: '/' --> 'left'; '\' --> 'right'
+
+## Analysis on memory usage and runtime performance
 
 ## How to run the code
 Each test case should be stored in a txt file and each txt file only represents one test case.
