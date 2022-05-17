@@ -15,11 +15,8 @@ Key points:
 
 1. For the forward path, starting point is (1,1) with 'right' and 'horizontal' orientation. For the backward path, starting point is (r,c) with 'left' and 'horizontal' orientation.
 2. The beam will continue moving in the current orientation until it meets another mirror or reaches the boundary. 
-3. Once meeting a mirror, the beam will change its orientation and in total, there are 4 orientations:
-- right
-- left
-- upward
-- downward
+3. Once meeting a mirror, the beam will change its orientation and in total, there are 4 orientations: right & left & upward & downward
+
 if the mirror is /:
 - right -> upward
 - left -> downward
@@ -53,6 +50,7 @@ Solutions:
 | set_orientation()      | will be changed in move()                                                                       |
 
 > Cell()
+
 | Attributes/ Methods | Notes                                                                                          |
 |---------------------|------------------------------------------------------------------------------------------------|
 | mirror_type         | the mirror type of that cell,'None',default value, means there is no mirror, 'left' or 'right' |
@@ -76,7 +74,8 @@ the condition for returning 'impossible': there is no element in the differnce b
 
 ### Any possibility of an infinite loop?
 With below illustration, we can prove there cannot be a trap.
-<img width="1047" alt="image" src="https://user-images.githubusercontent.com/77568908/168870462-89958adf-a835-4131-9d99-b2aa06484d4d.png">
+<img width="179" alt="image" src="https://user-images.githubusercontent.com/77568908/168870462-89958adf-a835-4131-9d99-b2aa06484d4d.png">
+
 a light beam enters this trap and it won't get out of this box. However, if there was a trap, the light beam will eventually come back to this mirror, but it cannot hit it with 'right' direction since this direction implies the beam comes from outside. Meanwhile, for all other 3 directions, the beam will escape the trap.
 
 **representation**
