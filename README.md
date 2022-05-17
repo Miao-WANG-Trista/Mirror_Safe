@@ -8,6 +8,7 @@ We know the positions of all other mirrors inside the safe, we can simulate both
 - if there is no overlap, we know the safe cannot be opened with or without inserting a mirror.
 
 Below is the flow chart for this process.
+
 <img width="526" alt="image" src="https://user-images.githubusercontent.com/77568908/168853057-d77b41f6-f556-49bc-8aca-b5af63398cf7.png">
 
 ### How to simulate the path?
