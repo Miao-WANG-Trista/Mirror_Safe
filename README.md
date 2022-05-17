@@ -1,6 +1,6 @@
 # Mirror_Safe
-# Thinking process
-## Where to put the mirror?
+## Thinking process
+### Where to put the mirror?
 We know the positions of all other mirrors inside the safe, we can simulate both forward path, the ray trace starting from the laser, and backward path,  the ray trace starting from the detector, where we assume there is a laser beam from the detector and observe its path.
 
 - if the forward path can reach the detector, it means the safe opens without inserting a mirror, we will output 0.
@@ -10,7 +10,7 @@ We know the positions of all other mirrors inside the safe, we can simulate both
 Below is the flow chart for this process.
 <img width="726" alt="image" src="https://user-images.githubusercontent.com/77568908/168853057-d77b41f6-f556-49bc-8aca-b5af63398cf7.png">
 
-## How to simulate the path?
+### How to simulate the path?
 Key points:
 
 1. For the forward path, starting point is (1,1) with 'right' and 'horizontal' orientation. For the backward path, starting point is (r,c) with 'left' and 'horizontal' orientation.
@@ -71,7 +71,7 @@ the condition for returning 0: the point at the right to the bottom right cell c
 
 the condition for returning 'impossible': there is no element in the differnce between mirror_set and intersection (between forward_path and backward_path) 
 
-## Any possibility of an infinite loop?
+### Any possibility of an infinite loop?
 With below illustration, we can prove there cannot be a trap.
 <img width="635" alt="image" src="https://user-images.githubusercontent.com/77568908/168867396-e20c36b0-59c6-404d-bc65-023b1ad66ea6.png">
 
@@ -83,7 +83,7 @@ With below illustration, we can prove there cannot be a trap.
     (0, -1): "left"
 2. mirror_type: '/' --> 'left'; '\' --> 'right'
 
-# How to run the code
+## How to run the code
 Each test case should be stored in a txt file and each txt file only represents one test case.
 step 1. Put the txt file into the same directory with main.py and helpful_functions.py.
 step 2. In the terminal, cd to the current directory
