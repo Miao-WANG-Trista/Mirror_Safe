@@ -9,7 +9,8 @@ We know the positions of all other mirrors inside the safe, we can simulate both
 
 Below is the flow chart for this process.
 
-<img width="526" alt="image" src="https://user-images.githubusercontent.com/77568908/168853057-d77b41f6-f556-49bc-8aca-b5af63398cf7.png">
+<img width="550" alt="image" src="https://user-images.githubusercontent.com/77568908/168937202-e5519e52-48bd-40ce-a276-ac098cf265e8.png">
+
 
 ### How to simulate the path?
 Key points:
