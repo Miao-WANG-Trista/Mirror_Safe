@@ -93,9 +93,9 @@ A light beam enters this trap and it won't get out of this box. However, if ther
 **Memory usage**
 
 We have objects of three classes:<br>
-Cell(): each of its attribute 'mirror_type' 1 string 'left'/'right' will take around 54 bytes and there will be r * c cells.<br>
-Laser(): each of its attributes 'orientation' 2 ints 'position' 2 ints 'visited_cells' r * c * 3 ints (pointers considered). In total, it will take around 28 * (4+3rc) bytes and there will be 2 lasers, forward and backward. <br>
-Grid(): each of its attributes 'rows' 1 int 'columns' 1 int 'mirror_set' (m+n) * 3 ints. In total, it will take around 28 * (2+3*(m+n)) bytes and there is only one grid.<br>
+Cell(): Each of its attribute 'mirror_type' 1 string 'left'/'right' will take around 54 bytes and there will be r * c cells.<br>
+Laser(): Each of its attributes 'orientation' 2 ints 'position' 2 ints 'visited_cells' r * c * 3 ints (pointers considered). In total, it will take around 28 * (4+3rc) bytes and there will be 2 lasers, forward and backward. <br>
+Grid(): Each of its attributes 'rows' 1 int 'columns' 1 int 'mirror_set' (m+n) * 3 ints. In total, it will take around 28 * (2+3*(m+n)) bytes and there is only one grid.<br>
 Plus, there are three variables, total_rows, total_columns, joint_list, which will take around (m+n) * (2*28+54)+2*28 = 56+110 * (m+n)
 Overall, this algorithm will take around **112+194(m+n)+222rc**. <br>
 **Runtime performance**
@@ -110,3 +110,4 @@ Step 2. In the terminal, cd to the current directory<br>
 Step 3. run 'python main.py test.txt'<br>
 
 ## Test cases
+Apart from the examples given in the pdf, I created another 3 test cases. Below are the output results.
