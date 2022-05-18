@@ -90,13 +90,16 @@ a light beam enters this trap and it won't get out of this box. However, if ther
 2. mirror_type: '/' --> 'left'; '\' --> 'right'
 
 ## Analysis on memory usage and runtime performance
-Memory usage:
-We have objects of three classes:
-Cell(): each of its attribute 'mirror_type' 1 string 'left'/'right' will take around 54 bytes and there will be r * c cells.
-Laser(): each of its attributes 'orientation' 2 ints 'position' 2 ints 'visited_cells' r * c * 3 ints (pointers considered). In total, it will take around 28 * (4+3rc) bytes and there will be 2 lasers, forward and backward
-Grid(): each of its attributes 'rows' 1 int 'columns' 1 int 'mirror_set' (m+n) * 3 ints. In total, it will take around 28 * (2+3*(m+n)) bytes and there is only one grid.
+**Memory usage**
+
+We have objects of three classes:<br>
+Cell(): each of its attribute 'mirror_type' 1 string 'left'/'right' will take around 54 bytes and there will be r * c cells.<br>
+Laser(): each of its attributes 'orientation' 2 ints 'position' 2 ints 'visited_cells' r * c * 3 ints (pointers considered). In total, it will take around 28 * (4+3rc) bytes and there will be 2 lasers, forward and backward. <br>
+Grid(): each of its attributes 'rows' 1 int 'columns' 1 int 'mirror_set' (m+n) * 3 ints. In total, it will take around 28 * (2+3*(m+n)) bytes and there is only one grid.<br>
 Plus, there are three variables, total_rows, total_columns, joint_list, which will take around (m+n) * (2*28+54)+2*28 = 56+110 * (m+n)
-Overall, this algorithm will take around 112+194*(m+n)+222* r * c
+Overall, this algorithm will take around **112+194(m+n)+222rc**. <br>
+**Runtime performance**
+The most expensive operation here is to iterate through all cells of the grid, which will take O(r * c).
 
 ## How to run the code
 Each test case should be stored in a txt file and each txt file only represents one test case.
