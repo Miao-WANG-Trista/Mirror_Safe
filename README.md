@@ -76,6 +76,7 @@ the condition for returning 'impossible': there is no element in the differnce b
 
 ### Any possibility of an infinite loop?
 With below illustration, we can prove there cannot be a trap.
+
 <img width="179" alt="image" src="https://user-images.githubusercontent.com/77568908/168870462-89958adf-a835-4131-9d99-b2aa06484d4d.png">
 
 a light beam enters this trap and it won't get out of this box. However, if there was a trap, the light beam will eventually come back to this mirror, but it cannot hit it with 'right' direction since this direction implies the beam comes from outside. Meanwhile, for all other 3 directions, the beam will escape the trap.
@@ -89,12 +90,17 @@ a light beam enters this trap and it won't get out of this box. However, if ther
 2. mirror_type: '/' --> 'left'; '\' --> 'right'
 
 ## Analysis on memory usage and runtime performance
+Memory usage:
+We have objects of three classes:
+Cell(): each of its attribute 'mirror_type' 1 string 'left'/'right' will take around 54 bytes and there will be r * c cells.
+Laser(): each of its attributes 'orientation' 2 ints 'position' 2 ints 'visited_cells' r * c * 3 ints (pointers considered). In total, it will take around 28 * (4+3rc) bytes and there will be 2 lasers, forward and backward
+Grid(): each of its attributes 'rows' 1 int 'columns' 1 int 'mirror_set' (m+n) * 3 ints. In total, it will take around 28 * (2+3*(m+n)) bytes and there is only one grid.
+Plus, there are three variables, total_rows, total_columns, joint_list, which will take around (m+n) * (2*28+54)+2*28 = 56+110 * (m+n)
+Overall, this algorithm will take around 112+194*(m+n)+222* r * c
 
 ## How to run the code
 Each test case should be stored in a txt file and each txt file only represents one test case.
 
-step 1. Put the txt file into the same directory with main.py and helpful_functions.py.
-
-step 2. In the terminal, cd to the current directory
-
-step 3. run 'python main.py test.txt'
+Step 1. Put the txt file into the same directory with main.py and helpful_functions.py.<br>
+Step 2. In the terminal, cd to the current directory<br>
+Step 3. run 'python main.py test.txt'<br>
