@@ -111,3 +111,8 @@ Step 3. run 'python main.py test.txt'<br>
 
 ## Test cases
 Apart from the examples given in the pdf, I created another 3 test cases. Below are the output results.
+<img width="334" alt="image" src="https://user-images.githubusercontent.com/77568908/169098090-4ffbe875-8d5e-447b-b89d-6035c5af4fd7.png">
+And below is the actual results. The model successfully passed all test cases.
+<img width="346" alt="image" src="https://user-images.githubusercontent.com/77568908/169098157-e727a709-c85b-4c58-b2d1-69ceb3c509ad.png">
+
+
